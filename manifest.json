@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Instagram Privacy Enhancer",
+  "version": "1.0",
+  "description": "Blur usernames and sensitive information on Instagram.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "webNavigation"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.instagram.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      
+      "48": "icon48.png"
+      
+    }
+  },
+  "icons": {
+    
+    "48": "icon48.png"
+  }
+}
